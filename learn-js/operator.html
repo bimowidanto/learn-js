@@ -8,8 +8,8 @@
 </head>
 <body>
     <script>
-        /*
-    // Operator aritmatika pada javascript
+        
+        <!-- Operator aritmatika pada javascript -->
 
         var a = 25; //string tidak diapit "" (petik)
         var b = 4;
@@ -34,10 +34,11 @@
         //modulo
         c = a % b;
         document.write(`${a} % ${b} = ${c}<br>`);
-        */
+        
     
-/*
-    // Operator penugasan
+
+    <!-- Operator penugasan -->
+
         document.write("Awal nilai score...<br/>");
         //pengisian nilai
         var score = 100;
@@ -66,9 +67,9 @@
         //pengisian dan modulo degan 3
         score %= 3;
         document.write("score = " + score + "<br/>");
-*/
 
-        //Operator perbandingan js
+
+        <!-- Operator perbandingan js -->
         //Operator relasi atau perbandingan yang digunakan untuk membandingkan dua nilai.
         //Operator perbandingan akan menghasilkan sebuah nilai boolean true dan false
         /*
@@ -80,6 +81,7 @@
         Lebih Besar Sama dengan	    >=
         Lebih Kecil Sama dengan	    <=
         */
+        
         var aku = 20;
         var kamu = 19;
 
@@ -111,8 +113,97 @@
 
         var c = "4" == 4; //
         document.write(`${a} != ${b} = ${hasil}<br/>`);
+        
 
-   
+        <!-- Operator Logika JS -->
+        //Operator digunakam untuk melakukan operasi terhadap dua nilai boolean.
+        /*
+        Nama Operator       Simbol
+        Logika AND            &&
+        Logika OR             ||
+        Negasi/Kebalikan      !
+        */
+        
+        var motor = 20;
+        var mobil = 19;
+
+        var benar = mobil > motor;
+        var salah = mobil < motor;
+
+        //Operator && (and)
+        var hasil = benar && salah;
+        document.write(`${benar} && ${salah} = ${hasil}<br/>`);
+
+        //Operator || (or)
+        var hasil = benar || salah;
+        document.write(`${benar} || ${salah} = ${hasil}<br/>`);
+
+        //Operator ! (not)
+        var hasil = !benar;
+        document.write(`!${benar} = ${hasil}<br/>`);
+        
+        
+        <!-- operator Bitwise JS -->
+        //Operator bitwise merupakan oprator yang digunakan untuk operasi berdasarkan bit(biner).
+        /*
+        Nama            Simbol
+        AND                 $
+        OR                  |
+        XOR                 ^
+        Negasi/Kebalikan    ~
+        Left Shift          <<
+        Right Shift         >>
+        Left Shift          <<<
+        Right Shift         >>>
+        /*
+        Operator ini berlaku untuk tipe data int, long, short, char, dan byte.
+        Operator ini akan menghitung dari bit-ke-bit.
+        Misalnya, kita punya variabel a = 60 dan b = 13.
+        */
+        
+        var x = 4;
+        var y = 3;
+
+        // operator bitwise and
+        var hasil = x & y;
+        document.write(`${x} & ${y} = ${hasil}<br/>`);
+
+        // operator bitwise or
+        var hasil = x | y;
+        document.write(`${x} | ${y} = ${hasil}<br/>`);
+
+        // operator bitwise xor
+        var hasil = x ^ y;
+        document.write(`${x} ^ ${y} = ${hasil}<br/>`);
+
+        // operator negasi
+        var hasil = ~x;
+        document.write(`~${x} = ${hasil}<br/>`);
+        
+        // operator bitwise right shift >>
+        var hasil = x >> y;
+        document.write(`${x} >> ${y} = ${hasil}<br/>`);
+
+        // operator bitwise right shift <<
+        var hasil = x << y;
+        document.write(`${x} << ${y} = ${hasil}<br/>`);
+
+        // operator bitwise right shift (unsigned) >>>
+        var hasil = x >>> y;
+        document.write(`${x} >>> ${y} = ${hasil}<br/>`);
+        
+        
+        <!-- Operator Tenary JS -->
+        //Operator ternary merupakan operator yang teridiri dari tiga bagian.
+        /*
+        Opertor ternary pada Javascript, biasanya digunakan untuk membuat sebuah percabangan if/else.
+        Simbol opertor ternary terdiri dari tanda tanya dan titik dua (?:).
+        */
+
+        var pertanyaan = confirm("Apakah kamu berumur diatas 18 tahun?")
+
+        var hasil = pertanyaan ? "Selamat datang" : "Kamu tidak boleh di sini";
+        document.write(hasil);
    
     </script>
     
