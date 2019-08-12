@@ -28,9 +28,56 @@
         document.write("<p>Perulangan ke-" + i + "</p>")
         }        
     
+        //<!-- Perulangan while JS -->
+
+        var ulangi = confirm("Apakah ingin mengulangi?");
+        var counter = 0;
+
+        while(ulangi){
+            var jawab = confirm("Apakah anda mau mengulang?");
+            counter++;
+            if(jawab == false){
+                ulangi = false;
+            }
+        }
+        
+        document.write("perulangan sudah dilakukan sebanyak " + counter +" kali");
     
-    
-    
+        //<-- Atau disederhanakan -->
+        var ulangi = confirm("Apakah anda mau mengulang?");
+        var counter = 0;
+
+        while(ulangi){
+            counter++;
+            ulangi = confirm("Apakah anda mau mengulang?");
+        }
+
+        document.write("Perulangan sudah dilakuakn sebanyak "+ counter +" kali");
+
+        //<!-- Perulangan Do/While JS -->
+        /*
+        Perulangan do/while sama seperti perulangan while.
+        Perbedaanya:
+        Perulangan do/while akan melakukan perulangan sebanyak 1 kali terlebih dahulu, 
+        lalu mengecek kondisi yang ada di dalam kurung while.
+        do {
+        // blok kode yang akan diulang
+        } while (<kondisi>);
+        Jadi perbedaanya:
+        //Perulangan do/while akan mengecek kondisi di belakang (sesudah mengulang), 
+        //sedangkan while akan mencek kondisi di depan atau awal (sbelum mengulang).
+        */
+
+        var loop = confirm("Apakah anda mau mengulang?");;
+        var looping = 0;
+
+        do {
+            looping++;
+            looping = confirm("Apakah anda mau mengulang?");
+        } while(looping)
+
+        document.write("Perulangan sudah dilakuakn sebanyak "+ looping +" kali");
+
     
     </script>
 
