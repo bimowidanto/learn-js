@@ -78,7 +78,39 @@
 
         document.write("Perulangan sudah dilakuakn sebanyak "+ looping +" kali");
 
+
+        //<!-- Perulangan dengan Method repeat()
+        /*
+        Perulangan dengen method atau fungsi repeat() termasuk dalam perulangan counted loop.
+        Fungsi ini khusus digunakan untuk mengulang sebuah teks (string).
+        */
+        for( let i = 0; i < 100; i++){
+            document.write("Ulangi kalimat ini!");
+        }
+
+        //<!-- Perulangan bersarang (nested) -->
+        /*
+        Di dalam blok perulangan, kita juga dapat membuat perulangan.
+        Ini disebut dengan nested loop atau perulangan bersarang atau perulangan di dalam perualangan.
+        */
+
+        for(let i = 0; i < 10; i++){
+            for(let j = 0; j < 10; j++){
+                document.write("<p>Perulangan ke " + i + "," + j + "</p>");
+            }
+        }
     
+
+        var ulangi = confirm("apakah anda ingin mengulang?");
+        var counter = 0;
+
+        while (ulangi) {
+            counter++;
+            var bintang = "*".repeat(counter) + "<br>";
+            document.write(counter + ": " + bintang);
+            ulangi = confirm("apakah anda ingin mengulang?");
+        }
+
     </script>
 
 </body>

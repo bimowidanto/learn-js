@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+
+            /*
+            struktur data merupakan cara-cara atau metode 
+            yang digunakan untuk menyimpan data di dalam memori komputer.
+
+            Array merupakan struktur data yang digunakan 
+            untuk menyimpan sekumpulan data dalam satu tempat.
+
+            === Index array ===
+            ---------------------------------------
+            |   index1    |   index2  |   index3  |
+            ---------------------------------------
+                0             1          3      
+            Index array selalu dimulai dari angka nol (0).
+            array dapat kita buat dengan tanda kurung siku ([...]),
+            lalu setiap data dipisah dengan tanda koma (,).
+            */
+
+            //Cara mengambil data array
+
+            // membuat array
+            var products = ["Senter", "Radio", "Antena", "Obeng"];
+
+            // mengambil radio
+            document.write(products[1]);
+            
+            // menggunakan perulangan untuk mencetak semua isi array.
+            document.write("<h3>Daftar Produk:</h3>");
+            document.write("<ol>");
+            
+            for(let i = 0; i < products.length; i++){
+                document.write(`<li>${ products[i] }</li>`);
+            }
+            document.write("</ol>");
+            // menggunakan perulangan untuk mencetak semua isi array
+            document.write("<h3>Daftar Produk:</h3>");
+            document.write("<ol>");
+
+            products.forEach((data) => {
+                document.write(`<li>${data}</li>`);
+            });
+            document.write("</ol>");
+            
+    
+            //<!-- Menambah data ke dalam array
+            /*
+            Ada dua cara yang bisa dilakukan untuk menambah data ke dalam array:
+            Mengisi menggunakan indeks;
+            Mengisi menggunakan method push().
+            */
+            //Mehod push
+            // membuat array
+            var products = ["Senter", "Radio", "Antena", "Obeng"];
+            // menambahkan tv ke dalam array products
+            products.push("Televisi");
+            // menapilkan isi array
+            document.write(products);
+    
+            //<!-- Cara menghapus data array
+            /*
+            menghapus data juga memiliki dua cara:
+            Menggunakan delete;
+            Menggunakan method pop().
+            */
+
+            
+
+
+
+    
+    </script>
+
+</body>
+</html>
+
+
+
