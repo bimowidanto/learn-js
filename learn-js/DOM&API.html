@@ -8,6 +8,26 @@
 </head>
 <body>
 
+    <div id="tutorial"></div>
+
+    <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quo quaerat recusandae qui ullam eaque cumque ea fugit,
+        debitis commodi ipsum illo dolorum consequatur sed laudantium suscipit quis magni,
+        maiores in?</p>
+
+    <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quo quaerat recusandae qui ullam eaque cumque ea fugit,
+        debitis commodi ipsum illo dolorum consequatur sed laudantium suscipit quis magni,
+        maiores in?</p>
+
+    <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quo quaerat recusandae qui ullam eaque cumque ea fugit,
+        debitis commodi ipsum illo dolorum consequatur sed laudantium suscipit quis magni,
+        maiores in?</p>
+
+    <h2 id="judul2">Judul dihapus!</h2>
+
+
     <script>
         //<!-- DOM & API -->
         /*
@@ -17,9 +37,75 @@
         
         Objek DOM di javascript bernama document. Objek ini berisi segala hal yang kita butuhkan untuk memanipulasi HTML.
 
+        1.getElementById() fungsi untuk memilih elemen berdasarkan atribut id.
+        2.getElementByName() fungsi untuk memilih elemen berdasarkan atribut name.
+        3.getElementByClassName() fungsi untuk memilih elemen berdasarkan atribut class.
+        4.getElementByTagName() fungsi untuk memilih elemen berdasarkan nama tag.
+        5.getElementByTagNameNS() fungsi untuk memilih elemen berdasarkan nama tag.
+        6.querySelector() fungsi untuk memilih elemen berdasarkan query.
+        7.querySelectorAll() fungsi untuk memilih elemen berdasarkan query.
+            dan lain-lain.
+        */
+
+        <!-- Elemen div yang akan kita pilih dari JS -->
+        // mengakses elemen tutorial
+        var tutorial = document.getElementById("tutorial");
+
+        // mengisi teks ke dalam elemen
+        tutorial.innerText = "Tutorial Javascript";
+
+        // memberikan CSS ke elemen
+        tutorial.style.backgroundColor = "gold";
+        tutorial.style.padding = "10px";
+    
+        var paragraf = document.getElementsByClassName("paragraf");
+        console.log(paragraf);        
+
+        var paragraf = document.getElementsByClassName("paragraf");
+        setInterval(function () {
+            paragraf[0].style.color = "red";
+            paragraf[1].style.color = "green";
+            paragraf[2].style.color = "blue";
+
+            setTimeout(function() {
+                paragraf[0].style.color = "black";
+                paragraf[1].style.color = "black";
+                paragraf[2].style.color = "black";
+            }, 500)
+        }, 1000);
         
-    
-    
+        /*
+        fungsi setInterval() dan fungsi setTimeOut() untuk menentukan waktu animasinya.
+        rentang waktu (interval) kita berikan 1000 milidetik atau 1 detik.
+        Sedangkan untuk merubah warnanya menjadi hitam, kita berikan waktu 500 milidetik atau 0.5 detik.
+        */
+
+        //<!-- Membuat elemen DOM API -->
+
+        //membuat elemen h1
+        var judul = document.createElement("h1");
+
+        //mengisi konten elemen
+        judul.textContent = "DOM API JAVASCRIPT";
+
+        //menambahkan elemen ke dalam body
+        document.body.append(judul);      
+
+        //Menghapus elemen DOM API
+
+        var h2 = document.getElementById("judul2");
+
+        //menghapus elemen yang sudah dipilih
+        h2.remove();
+
+        console.log("Elemen sudah dihapus");
+        console.log(h2);
+
+
+
+
+
+
     </script>
     
 </body>
