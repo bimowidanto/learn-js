@@ -10,6 +10,13 @@
 
     <div id="tutorial"></div>
 
+    <h1>Aplikasi Ubah Warna</h1>
+    <label>Warna latar: </label>
+    <input type="color" id="bg-color" />
+    <br>
+    <label>Warna teks: </label>
+    <input type="color" id="text-color" />
+
     <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Quo quaerat recusandae qui ullam eaque cumque ea fugit,
         debitis commodi ipsum illo dolorum consequatur sed laudantium suscipit quis magni,
@@ -101,7 +108,16 @@
         console.log("Elemen sudah dihapus");
         console.log(h2);
 
+        var bgColor = document.getElementById('bg-color');
+        var txtColor = document.getElementById('text-color');
 
+        bgColor.addEventListener("change", (event) => {
+            document.body.style.backgroundColor = bgColor.value;
+        });
+
+        txtColor.addEventListener("change", (event) => {
+            document.body.style.color = txtColor.value;
+        });
 
 
 

@@ -10,6 +10,14 @@
     <div id="wrap"></div>
     
     <script>
+        //<!-- Cara membuat fungsi JS -->
+        /*
+        Ada 4 cara yang bisa kita lakukan untuk membaut fungsi di Javascript:
+        1.Menggunakan cara biasa;
+        2.Menggunakan ekspresi;
+        3.Menggunakan tanda panah (=>);
+        4.dan menggunakan Constructor.
+        */
         // Fungsi
         //function printText(){
         //    alert("selamat datang");
@@ -25,14 +33,96 @@
         //}
 
 
-        function printText(nama, nama1){
-            var text = nama + " yang baru";
-            document.getElementById("wrap").innerHTML = nama;
+        //function printText(nama, nama1){
+        //    var text = nama + " yang baru";
+        //    document.getElementById("wrap").innerHTML = nama;
+        //}
+
+        //<1> membuat fungsi cara biasa
+        function namaFungsi(){
+            console.log("Hello World!");
         }
 
-        // menulis fungsi
-        printText("");
+        //<2> fungsi dengan ekspresi
+        var namaFungsi = function(){
+            console.log("fungsi ekspresi JS");
+        }
+
+        /*
+        menggunakan variabel, lalu diisi dengan fungsi. 
+        Fungsi ini sebenarnya adalah fungsi anonim 
+        (anonymous function) atau fungsi tanpa nama.
+        */
+
+        //<3> Fungsi dengan tanda panah
+
+        var namaFungsi = () => {
+            console.log("Fungsi dengan tanda panah");
+        }
+
+        // atau seperti ini(jika fungsi hanya satu baris):
+        var namaFungsi = () => console.log("hello world");
+
+        //<4> Fungsi dengan konstruktor
+        //Note : tidak direkomendasikan oleh Dev Mozilla
+
+        var namaFungsi = new Function('console.log("Hello World!");');
+
+        //<!-- memanggil dan mengeksekusi fungsi
+
+        //membuat fungsi
+        function sayHello(){
+            console.log("Hello World");
+        }
+
+        //memanggil fungsi
+        sayHello() // -> hello world
+
+        //membuat fungsi, memanggil fungsi melalui atribut event pada HTML.
+        var sayHello = () => alert("Hello dude!");
+
+        //Fungsi dengan parameter
+        //Parameter adalah variabel yang menyimpan nilai untuk diproses didalam dungsi.
+
+        function kali(a, b){
+            hasilKali = a * b;
+            console.log("Hasil kali a * b = " + hasilKali);
+        }
+
+        //a dan b adalah sebuah parameter
+        //memnggil fungsi yang memiliki parameter
+
+        kali(3, 2);
+
+        //<!-- Fungsi mengembalikan nilai
+        /*
+        Pengembalian nilai pada fungsi menggunakan 
+        kata kunci return kemudian diikuti dengan 
+        nilai atau variabel yang akan dikembalikan.
+        */
+
+        function bagi(a,b){
+            hasilBagi = a / b;
+            return hasilBagi;
+        }
+
+        //memanggil fungsi
+        var nilai1 = 20;
+        var nilai2 = 5;
+        var hasiPembagian = bagi(nilai1, nilai2);
+
+        console.log(hasiPembagian); //4
+
+        //<!-- Program Javascript dengan fungsi
+        
+
+
+
+
+
     
     </script>
+    <!-- memanggil fungsi saat link di klik --> //LINE: 82
+    <a href="#" onclick="sayHello()">Klik disini!</a>
 </body>
 </html>
