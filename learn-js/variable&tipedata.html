@@ -7,6 +7,27 @@
     <title>Variable dan tipe data</title>
 
     <script>
+        //<!-- Variabel -->
+        /*
+        Variabel adalah sebuah nama yang mewakili sebuah nilai. 
+        Variabel bisa diisi dengan berbagai macam nilai seperti 
+        string (teks), number (angka), objek, array, dan sebagainya.
+        */
+
+        //Pada Javascript kita dianjurkan menggunakan camelCase dalam 
+        //penamaan variabel atau menggunakan snake case atau underscore. 
+
+            var site_name = "Petani Kode";
+            var visitor_count = 1243;
+
+        //<!--Menampilkan isi Variabel-->
+        //Untuk menampilkan isi variabel, kita bisa memanfaatkan fungsi-fungsi untuk menampilkan output seperti:
+        /*
+        Fungsi console.log() menampilkan output ke console javascript;
+        Fungsi document.write() menampilkan output ke dokumen HTML;
+        dan Fungsi alert() menampilkan output ke jendela dialog.
+        */
+
             // membuat variabel
             var name = "JavaScript";
             var visitorCount = 5000;
@@ -18,6 +39,16 @@
         
             visitorCount = 6000; //mengisi ulang variabel 
 
+        //<!--Mengisi Ulang Variabel-->
+        //Variabel bersifat mutable, artinya nilai yang tersimpan di dalamnya dapat kita isi ulang (berubah).
+
+            // membuata variabel
+            var age = 18;
+            // lalu ulang
+            age = 21;
+
+        //<!-- Delete variabel-->
+
             var bookTitle = "Belajar Pemrograman Javascript";
             delete bookTitle; //menghapus variabel
 
@@ -28,6 +59,41 @@
             document.write("Jumlah Pengunjung: " + visitorCount + "<br>");
             document.write("Status Aktif: " + isActive + "<br>");
             document.write("Alamat URL: " + url + "<br>");
+
+
+        //<!--Tipe Data-->
+        //Tipe data adalah jenis-jenis data yang bisa kita simpan di dalam variabel.
+        //Ada beberapa tipe data dalam Javascript:
+        /*
+        <1>String (teks)
+        <2>Integer atau Number (bilangan bulat)
+        <3>Float (bilangan Pecahan)
+        <4>Boolean
+        <5>Object
+        */
+
+            var name = "Dian"; //tipedata string
+            var age = 22;   //tipedate integer
+            var single = true;  //tipedata boolean
+
+        //<!--mengecek tipe data dengan kata kunci typeof
+
+            typeof name;
+            typeof age;
+            typeof single;
+
+
+        //<!--Aturan Penulisan Nama Variabel-->
+
+            // salah
+            var 123nama = "Petanikode";
+            // benar
+            var nama123 = "Petani Kode";
+            // benar
+            var _nama = "Petani Kode";
+            // benar
+            var fullName = "Petani Kode";
+            
         </script>
 
 </head>

@@ -80,6 +80,47 @@
         Tidak Sama dengan	    != atau !==
         Lebih Besar Sama dengan	    >=
         Lebih Kecil Sama dengan	    <=
+        operator perbandingan       ==
+        operator identitas          ===
+        */
+
+        var str = 'saya';
+        var num = 12;
+        var bool = false;
+        var und;
+        var n = null;
+
+        console.log(str == 'saya');
+        console.log('---------------');
+        console.log(num == 12);
+        console.log(num === 12);
+        console.log(num == 12.00);
+        console.log(num == 0xC);
+        console.log(num == 014);
+        console.log('----------------');
+        console.log(bool == true);
+        console.log('-----------------');
+        console.log(und == undefined);
+        console.log(n == null);
+
+        //#Equal value, ==
+        //var1 == var2
+        // apakah var1 bernilai sama dengan var2?
+        
+        /*Operator equal value melakukan pengecekan apakah operand pertama, 
+        sebelah kiri, bernilai sama dengan operand kedua, sebelah kanan. 
+        Jika bernilai sama maka operasi akan mengembalikan true. 
+        Jika bernilai tidak sama maka operasi akan mengembalikan false.
+        */
+
+        //#Equal value dan type, ===
+        //var1 === var 2
+        // apakah var1 memliki tipe yang sama dan bernilai sama dengan var2
+
+        /*
+        Operator ‘equal value and type, ===’ digunakan untuk melakukan pengecekan 
+        terhadap dua operand, apakah operand sebelah kiri memiliki data type yang sama 
+        dan bernilai sama dengan operand sebelah kanan.
         */
 
         var aku = 20;
@@ -189,7 +230,7 @@
         document.write(`${x} << ${y} = ${hasil}<br/>`);
 
         // operator bitwise right shift (unsigned) >>>
-        var hasil = x >>> =y;
+        var hasil = x >>> = y;
         document.write(`${x} >>> ${y} = ${hasil}<br/>`);
         
         
