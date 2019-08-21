@@ -84,7 +84,12 @@
 
 
         //<!--Aturan Penulisan Nama Variabel-->
-
+            /*
+            gunakan let hindari var
+            gunakan const untuk variabel yg 
+            nilainya statis atau tidak berubah
+            */
+            /*
             // salah
             var 123nama = "Petanikode";
             // benar
@@ -93,7 +98,128 @@
             var _nama = "Petani Kode";
             // benar
             var fullName = "Petani Kode";
+            // Es6
+            let x = 1; //declaration
+            x = 1; // assignment
+            const x = 1 //untuk variabel yg nilainya statis atau tidak berubah
+            */
+
+            //<!--The Problem with var-->
+            //var memang terlihat simple, tapi ada beberapa kasus yang sering membuat bingung.
+            //Problem #1 : Reassign
+            var foo ='hello1'
+            var foo ='hello2'
+            console.log(foo) //=> hello
+            //Masalahnya disini tidak ada pesan error sama sekali ketika terjadi duplikasi variabel. Tentu ini cukup riskan jika terjadi tanpa sengaja.
             
+            //Problem #2 : Hoisting
+            x=10
+            var x
+            console.log(x) //=> 10
+            //Ini sama dengan yang sebelumnya. Kenapa hasilnya bisa 10 ? itu karena Hoisting. Hoisting artinya mengangkat. Jadi di belakang layar sebenarnya mengangkat var x di angkat keatas menjadi seperti ini :
+            var x
+            x=10
+            console.log(x) //=> 10
+            //Kenapa ini jadi masalah ? ya karena membuat sebagian besar coder bingung.
+            
+            //Problem #3 : Scope
+            //Block scope dalam javascript di tandai dengan simbol { }. Scope artinya pembagian program, ini sering di temui pada if, for, switch, while dan sebagainya. Logikanya variabel dalam scope harusnya menjadi private dan tidak bisa di baca dari scope lain. Tapi mari kita coba buktikan
+            var b=2
+            if (true){
+            var b=3
+            }
+            console.log(b) //=> 3
+            //var ternyata menjadi global variabel, meskipun ada di dalam scope. Sebelum es6, solusinya adalah membuatnya dalam function scope
+            var b=2
+            function myScope(){
+            var b=3
+            }
+            myScope()
+            console.log(b) //=> 2
+            //atau bisa di persingkat dengan anymous IIFE
+            // Anymous IIFE ( Immediately Invoke Function Expression)
+            var b=2
+            (function(){
+            var c=3
+            })()
+            console.log(b)//=> 2
+            
+            //Problem #4 : Lupa deklarasi var = global
+            //Apa jadinya jika variabel dibuat tanpa deklarasi terlebih dahulu ?
+            (function(){
+            c=3
+            })()
+            console.log(b)//=> 3
+            //Variabel tanpa deklarasi dan langsung di assign akan di anggap 
+            //menjadi global variabel. Ini karena hoisting. Global variable is evil. 
+            //Sebisa mungkin hindari global variabel
+
+
+            //<!--Let-->
+            /*
+            Cara kerja let hampir sama dengan var, bedanya di scope. 
+            var adalah function scope, sedangkan let adalah block scope. ( lihat tabel diatas )
+            apakah let bisa digunakan untuk solusi dari problem var diatas ?
+            Mari kita coba problem var diatas dengan menggantinya menjadi let.
+            */
+            
+            //Problem #1 : Reassign
+            //let foo ='hello1'
+            //let foo ='hello2' //=> TypeError: Duplicate declaration "foo"
+            //console.log(foo)
+            //hasilnya type error, artinya let tidak akan mengijinkan anda membuat duplikasi varibel
+            
+            //Problem #2 : Hoisting
+            //x=10
+            //let x
+            //console.log(x) //=> ReferenceError: x is not defined
+            //hasilnya ReferenceError. Hoisting tidak berlaku pada let dan 
+            //variabel let harus di defenisikan terlebih dahulu sebelum di assign atau eksekusi
+            
+            //Problem #3 : Scope
+            //let adalah block scope, sehingga kita tidak perlu harus berurusan lagi dengan function untuk membuat local variabel. 
+            //let b=2
+            //if (true){
+            //let b=3
+            //}
+            //console.log(b) //=> 2
+            //Untuk problem #4 tidak bisa diselesaikan dengan let. variabel tanpa deklarasi dianggap var. 
+            //Ini menjadi tanggung jawab anda sendiri sebagai coder untuk lebih berhati-hati dalam membuat variabel. 
+            //Intinya setiap variabel harus di deklarasikan.
+            
+            //<!--Const-->
+            //Const atau Konstanta, dari namanya bisa di tebak. Variabel yang sifatnya tetap atau dengan kata lain nama dan isi dari variabel tidak bisa di ubah
+            //const KEY=123
+            //KEY = 456 //=> TypeError: Assignment to constant variable.
+            //const KEY=123
+            //var KEY = 456 //=> TypeError: Assignment to constant variable.
+            //tapi sorry bro, ini tidak berlaku untuk object dan array
+            //const obj = { id:1, name:'jhon'}
+            //obj.location="medan"
+            //console.log(obj) //=> { id:1, name:'jhon',location:'medan'}
+            //obj={} //=> TypeError: Assignment to constant variable.
+            /*
+            const arr=[1,2,3,4]
+            arr.push(5)
+            console.log(arr) //=> [1,2,3,4,5]
+            arr=[] //=> TypeError: Assignment to constant variable.
+            Variabel const memang tidak bisa reassign, tapi value dan property dalam object bisa di rubah. Ini karena object dalam javascript adalah mutable.
+            */
+            //<!--Imutable data JS-->
+            /*
+            Immutable artinya tidak bisa berubah 
+            #typedata String & integer
+            Mutable artinya bisa berubah
+            #array dan object adalah mutable
+            */
+            //Cloning variabel string :
+            var str = "hello world";
+            var newStr = str;
+            newStr = "hello new world";
+
+            console.log(newStr); // hello new world
+            console.log(str); // hello world
+
         </script>
 
 </head>

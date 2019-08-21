@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOP JS</title>
+</head>
+<body>
+
+    <script>
+    //<!--OOP (Object Oriented Programming)
+    /*
+    Sebelum kita memiliki sebuah object, 
+    maka kita perlu cetakan untuk membuat object-nya. 
+    Nah cetakan itu disebut class.
+
+    Objek pada javascript, dapat dibuat dengan tanda kurung kurawal 
+    dengan isi berupa key dan value.
+
+                key     value               key     value
+                |       /                   /       /
+    var car = {type:"BMW", model:"S500, color:"white"};
+                            \       \
+                            key     value
+
+    Di dalam kelas ada beberapa attribut penting di dalamnya yaitu:
+    - Constuctor
+    - Property
+    - Class Method
+    - Static Method
+    - Getter & Setter
+    - Inheritance
+
+    #Constuctor
+    Adalah sebuah method/function yang di jalankan pertama kali ketika object di buat. 
+    Misalnya seperti contoh kode di atas ketika const = new Car('suv', 'red') di jalankan 
+    maka method constructor langsung di jalankan juga, yang isinya adalah memasukkan parameter suv dan red 
+    ke dalam property car this.type dan this.color.
+    #Property
+    Adalah data yang di simpan di dalam sebuah object. Pada contoh di atas adalah this.type dan this.color, 
+    property dapat diakses di class method manapun yang ada di dalam object. Di atas saya memasukkan string on 
+    ke dalam this.engineStatus di dalam method engineStart().
+    #Class Method
+    Adalah method/function yang ada di dalam sebuah object, dan untuk menggunakannya class harus di instance 
+    terlebih dahulu menjadi object baru bisa dijalankan. Contoh class mobil di atas, kita akan menggunakan method engineStart .
+    
+    const car = new Car('suv', 'red')
+    car.engineStart()
+    #Static Method
+    Adalah method yang sama seperti class method, tetapi untuk menjalankannya tidak perlu meng instance class, 
+    cukup menggunakan NamaClass.namaMehod()
+
+    const car = new Car('suv', 'red)
+    Car.isEngineOn(car) // Engine Off
+    car.engineStart()
+    Car.isEngineOn(car) // Engine On
+
+
+    */
+
+    //<!-- Perbedaan properti dan method -->
+    /*
+    #Properti adalah ciri khas dari objek (variable)
+    #Method adalah perilaku dari objek (fungsi).
+        - Method dapat dibuat dengan cara mengisi nilai (value) dengan sebuah fungsi.
+    */
+
+    var car = {
+        //properti
+        type: "BMW",
+        model: "S500",
+        color: "black",
+
+        //method
+        start: function(){
+            console.log("ini method start");
+        },
+        drive: function(){
+            console.log("ini method drive");
+        },
+        brake: function(){
+            console.log("ini method brake");
+        },
+        stop: function(){
+            console.log("ini method stop");
+        }
+    };
+
+    //<!-- Mengakses properti dan method objek
+    //Caranya menggunakan tanda titik atau dot (.), 
+    //lalu diikuti dengan nama properti atau method.
+    
+//              namaObjek  propertiObjek
+        //           /     /
+        console.log(car.type);
+        console.log(car.color);
+
+//              methodObjek
+//              /
+        car.start();
+        car.drive();
+
+    /*
+    Untuk mengakses properti, kita cukup gunakan nama objek.
+    properti. Sedangkan untuk method, kita harus menggunakan 
+    tanda kurung. Ini menyatakan kalau kita ingin mengeksekusi fungsi.
+    */
+
+    //menggunakan keyword this
+    /*
+    kata kunci 'this' digunakan untuk mengakses properti dan method
+    dari dalam method (objek).
+    */
+    
+    var person = {
+        firstName: "Bimo",
+        lastName: "Widanto",
+        showName: function(){
+            alert(`Nama: ${this.firstName} ${this.lastName}`);
+        }
+    };
+
+    person.showName();
+
+    //<!-- Class dengan fungsi -->
+    function Contact(Phone, HandPhone){
+            // properti
+            this.Phone = Phone;
+            this.HandPhone = HandPhone;
+
+            // method
+            this.fullContact = function(){
+                return `${this.Phone} ${this.HandPhone}`
+            }
+            this.showContact = function(){
+                document.write(this.fullContact());
+            }
+        }
+
+        var Contact1 = new Contact("+62", "0856");
+        var Contact2 = new Contact("+62", "0898");
+
+        Contact1.showContact();
+        document.write("<br>");
+        Contact2.showContact();
+
+
+        //<!-- Objek Math JS -->
+        /*
+        Objek Math adalah objek yang berisi fungsi-fungsi matematika
+        dan beberapa konstanta untuk melakukan perhitungan matematika
+        seperti sin, cos, tan, eksponen, akar kuadrat, dll.
+        */
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

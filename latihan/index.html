@@ -4,20 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CRUD JS</title>
+    <title>DOM Selection</title>
+    <link 
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 15px;
+            margin: 15px;
+        }
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            max-width: 680px;
+            margin: 30px; auto;
+            font-family; sans-serif;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-    <fieldset>
-        <legend>Input Form</legend>
-        <input type="text" name="barang" placeholder="input nama barang..." />
-        <input type="button" onclick="addBarang()" value="Tambah" />
-    </fieldset>
-
-    <div>
-        <ul id="list-barang"></ul>
+    <h1 id="judul">Hello world</h1>
+    <div id="container">
+        <section id="a">
+            <p class="p1"> paragraf 1 </p>
+            <a class="p2"> paragraf 2 </a>
+            <p class="p3"> paragraf 3 </p>
+            <p class="p4"> paragraf 4 </p>
+            <p class="p5"> paragraf 5 </p>
+        </section>
+        <section id="b">
+            <p> Item List </p>
+            <ul>
+                <li> item 1 </li>
+                <li> item 2 </li>
+                <li> item 3 </li>
+            </ul>
+        </section>
     </div>
+
     
 </body>
-    <script src="/JavaScript/fungsi.js"></script>
+    <script src="/javascript/domjs.js"></script>
 </html>
