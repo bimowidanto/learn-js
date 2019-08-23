@@ -51,11 +51,50 @@
                 ------------*/
                 //Pada baris ke 2 setTimeout digunakan untuk menunda eksekusi dalam satuan milisecond dalam hal ini untuk simulasi prosess async.
 
+                
+                //console.log('hello')
+                //let user = requestAjax() // di eksekusi secara asynchronous
+                //displayUser(user)
 
+                //Dari contoh kode diatas besar kemungkinan displayUser menampilkan data kosong, 
+                //karena belum tentu output dari ekskusi requestAjax sudah selesai.
 
+                //<!--CallBack-->
+                /*
+                #Konsep Callback
+                Callback pada Synchronous
+                1. Callback sebagai Injeksi sebuah function
+                2. Callback sebagai Event Listener
+                Callback pada Asynchronous
+                1. Callback pada proses ajax
+                2. Operasi file
+                3. Callback Hell
 
+                Callback sebenarnya adalah function bedanya dengan function pada umumnya adalah di cara eksekusinya. 
+                Jika function pada umumnya di eksekusi berurutan dari atas ke bawah maka callback di eksekusi pada point tertentu, 
+                itu sebabnya di sebut callback.
 
+                Callback disebut juga dengan high-order function. Callback sebenarnya adalah function, 
+                bedanya dengan function pada umumnya adalah di cara eksekusinya. 
+                Jika function pada umumnya di eksekusi secara langsung sedangkan callback di eksekusi dalam function lain melalui parameter.
+                */
 
+                function main(param1,param2,callBack){ 
+                  console.log(param1, param2) 
+                  callBack()  
+                }
+
+                function myCallback(){ 
+                  console.log ('hello callback')
+                }
+
+                main(1,2,myCallback)
+
+                /* ===================
+                Output :
+                1 2
+                hello callback
+                */
 
 
 
