@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DOM Selection</title>
-    <link 
+    <title>css-layout</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             border: 2px solid #dedede;
@@ -17,16 +17,17 @@
             padding: 0;
         }
         body {
-            max-width: 680px;
-            margin: 30px; auto;
+            max-width: 600px;
+            margin: 10px; auto;
             font-family; sans-serif;
-            color: #333;
+            color: #111;
         }
     </style>
 </head>
 <body>
-    <h1 id="judul">Hello world</h1>
+    <h1 id="judul>Hello world</h1>
     <div id="container">
+        <div class="satu">Hello world</div>
         <section id="a">
             <p class="p1"> paragraf 1 </p>
             <a class="p2"> paragraf 2 </a>
@@ -41,11 +42,25 @@
                 <li> item 2 </li>
                 <li> item 3 </li>
             </ul>
+            <ul>
+                <li class="topitems">First</li>
+                <li id="two" class="topitems"></li>
+                <li>thirtd</li>
+                <li>Fourth</li>
+            </ul>
         </section>
+        <div id="b">
+            <p class="p1"> paragraf 1 </p>
+            <p class="p2"> paragraf 2 </p>
+            <p class="p3"> paragraf 3 </p>
+            <p class="p4"> paragraf 4 </p>
+            <p class="p5"> paragraf 5 </p>
+        </div>
     </div>
+    <div id="text1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui placeat ullam deleniti, 
+        cum culpa obcaecati necessitatibus quasi rerum, <span>quidem excepturi consequatur rem aspernatur 
+        ea quo molestias provident libero facilis. Eligendi?</span></div>
 
     
 </body>
-    <script src="/javascript/domjs.js"></script>
-    <script src="/javascript/lat1function.js"></script>
 </html>

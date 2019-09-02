@@ -48,3 +48,16 @@ let a = parseInt(prompt('Masukan nilai 1 :'));
 let b = parseInt(prompt('Masukan nilai 2 :'));
 let jumlah = tambah(a, b);
 console.log(jumlah);
+
+
+function tambah1(a, b) {
+    return a + b;
+}
+
+function kali1(a, b) {
+    return a * b;
+}
+
+let Hasil1 = kali1(tambah1(1,2), tambah1(3,4));
+console.log(Hasil1);
+
